@@ -7,7 +7,7 @@
 //get appeui and appkey from the thing network
 #define DEVEUI "D896E0FF00000241"
 #define APPEUI "70B3D57ED0041DA0"
-#define APPKEY "850D282C603C163137BB71E9521D12D0"
+#define APPKEY "DAC6118A3445572B02EFB73443AF2EB9"
 
 #define DHTPIN 7      // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT11 // DHT 11
@@ -62,8 +62,8 @@ void loop()
         int temp = (int)(t * 10);
         char msg[30] = "";
         sprintf(msg, "AT+DTRX=1,2,5,%02x%04x", hum, temp);
-        SerialUSB.printf(msg);
-        //sendData((String)msg, 3000, DEBUG);
+        SerialUSB.println(msg);
+        sendData((String)msg, 3000, DEBUG);
 
         runtime = millis();
     }
