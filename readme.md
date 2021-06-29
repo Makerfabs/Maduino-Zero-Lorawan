@@ -118,15 +118,22 @@ AT+CJOINMODE=0
 AT+CJOIN=&lt;ParaValue1&gt;,[ParaValue2],…[ParaValue4]
 
 &lt;ParaTag1&gt;
+
 0: Stop JOIN
 1: Start JOIN
+
 [ParaValue2]
+
 0: Disable Auto JOIN
 1: Enable Auto JOIN
+
 [ParaValue3]
+
 JOIN cycle,range 7 to 255, unit is second。
 Default value is 8.
+
 [ParaValue4]
+
 Maximum number of access attempts,range 1 to 256.
 
 AT+CJOIN=1,0,10,1
@@ -139,16 +146,24 @@ Set JOIN parameter: Start join, disable automatic join, try period is 10s, maxim
 AT+DTRX=[confirm],[nbtrials],&lt;Length&gt;,&lt;Payload&gt;
 
 [confirm]
+
 0: UnConfirmed up message
+
 1: Confirmed up message
+
 [nbtrials]
+
 Set sending times.
 Confirm and nbtrials refer to the corresponding AT instruction, valid for this dispatch only, optional.
+
 &lt;Length&gt;
+
 Represents the number of strings. The maximum value is specified in the access specification. 
 The length of bytes allowed to be transmitted is different at different rates (see the Lorawan protocol for details). 
 0 indicates that empty packets are sent.
+
 &lt;Payload&gt;
+
 Hexadecimal (2 characters for 1 number)
 
 AT+DTRX=1,2,5,0123456789
