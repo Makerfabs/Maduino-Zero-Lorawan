@@ -3,11 +3,11 @@
 
 ```c++
 /*
-Version:		V1.0
+Version:		V1.1
 Author:			Vincent
 Create Date:	2021/5/19
 Note:
-	
+		V1.1:Add At command explain.
 */
 ```
 
@@ -26,9 +26,9 @@ Note:
 # Maduino Zero Lorawan
 ## Intruduce
 
-Product Link ：[]() 
+Product Link ：[maduino-zero-lorawan](https://www.makerfabs.com/maduino-zero-lorawan.html) 
 
-Wiki Link :  []() 
+Wiki Link :  [Maduino Zero LoRaWAN Node](https://www.makerfabs.com/wiki/index.php?title=Maduino_Zero_LoRaWAN_Node) 
 
 
 
@@ -47,10 +47,10 @@ Wiki Link :  []()
 
 ### Front:
 
-![front](md_pic/front~1.jpg)
+![front](md_pic/front.jpg)
 
 ### Back:
-![back](md_pic/back~1.jpg)
+![back](md_pic/back.jpg)
 
 
 
@@ -87,21 +87,21 @@ Register the Lorawan gateway in OTA mode and send data to the TTN. And send mess
 
 AT+CDEVEUI?
 
-### AT+CDEVEUI=<DevEUI>
+### AT+CDEVEUI=&lt;DevEUI&gt;
 
 *Set DEVEUI, APPEUI and APPKEY.*
 
-AT+CDEVEUI=<DevEUI:length is 16>
-AT+CAPPEUI=<AppEUI:length is 16>
-AT+CAPPKEY=<AppKey:length is 32>
+AT+CDEVEUI=&lt;DevEUI:length is 16&gt;
+AT+CAPPEUI=&lt;AppEUI:length is 16&gt;
+AT+CAPPKEY=&lt;AppKey:length is 32&gt;
 
 OTAA join mode need these three numbers.
 
-### AT+CJOINMODE=<MODE>
+### AT+CJOINMODE=&lt;MODE&gt;
 *Set join mode via OTAA.*
 
-AT+CJOINMODE=<MODE>
-<MODE>
+AT+CJOINMODE=&lt;MODE&gt;
+&lt;MODE&gt;
 0：OTAA
 1：ABP
 Defualt mode is OTAA.
@@ -109,11 +109,11 @@ Defualt mode is OTAA.
 AT+CJOINMODE=0
 
 
-### AT+CJOIN=<ParaValue1>,[ParaValue2],…[ParaValue4]
+### AT+CJOIN=&lt;ParaValue1&gt;,[ParaValue2],…[ParaValue4]
 *Join Lorawan to Lorawan webgate.*
 
-AT+CJOIN=<ParaValue1>,[ParaValue2],…[ParaValue4]
-<ParaTag1>
+AT+CJOIN=&lt;ParaValue1&gt;,[ParaValue2],…[ParaValue4]
+&lt;ParaTag1&gt;
 0: Stop JOIN
 1: Start JOIN
 [ParaValue2]
@@ -128,21 +128,21 @@ Maximum number of access attempts,range 1 to 256.
 AT+CJOIN=1,0,10,1
 Set JOIN parameter: Start join, disable automatic join, try period is 10s, maximum attempt times is 8.
 
-### AT+DTRX=[confirm],[nbtrials],<Length>,<Payload>
+### AT+DTRX=[confirm],[nbtrials],&lt;Length&gt;,&lt;Payload&gt;
 *Send one message to webgate,and receive message.*
 
-AT+DTRX=[confirm],[nbtrials],<Length>,<Payload>
+AT+DTRX=[confirm],[nbtrials],&lt;Length&gt;,&lt;Payload&gt;
 [confirm]
 0: UnConfirmed up message
 1: Confirmed up message
 [nbtrials]
 Set sending times.
 Confirm and nbtrials refer to the corresponding AT instruction, valid for this dispatch only, optional.
-<Length>
+&lt;Length&gt;
 Represents the number of strings. The maximum value is specified in the access specification. 
 The length of bytes allowed to be transmitted is different at different rates (see the Lorawan protocol for details). 
 0 indicates that empty packets are sent.
-<Payload>
+&lt;Payload&gt;
 Hexadecimal (2 characters for 1 number)
 
 AT+DTRX=1,2,5,0123456789
