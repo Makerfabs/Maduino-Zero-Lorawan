@@ -83,6 +83,7 @@ Register the Lorawan gateway in OTA mode and send data to the TTN. And send mess
 ## AT Command Explain
 
 ### AT+CDEVEUI?
+
 *Inquire DEVEUI right now.*
 
 AT+CDEVEUI?
@@ -98,6 +99,7 @@ AT+CAPPKEY=&lt;AppKey:length is 32&gt;
 OTAA join mode need these three numbers.
 
 ### AT+CJOINMODE=&lt;MODE&gt;
+
 *Set join mode via OTAA.*
 
 AT+CJOINMODE=&lt;MODE&gt;
@@ -110,9 +112,11 @@ AT+CJOINMODE=0
 
 
 ### AT+CJOIN=&lt;ParaValue1&gt;,[ParaValue2],…[ParaValue4]
+
 *Join Lorawan to Lorawan webgate.*
 
 AT+CJOIN=&lt;ParaValue1&gt;,[ParaValue2],…[ParaValue4]
+
 &lt;ParaTag1&gt;
 0: Stop JOIN
 1: Start JOIN
@@ -129,9 +133,11 @@ AT+CJOIN=1,0,10,1
 Set JOIN parameter: Start join, disable automatic join, try period is 10s, maximum attempt times is 8.
 
 ### AT+DTRX=[confirm],[nbtrials],&lt;Length&gt;,&lt;Payload&gt;
+
 *Send one message to webgate,and receive message.*
 
 AT+DTRX=[confirm],[nbtrials],&lt;Length&gt;,&lt;Payload&gt;
+
 [confirm]
 0: UnConfirmed up message
 1: Confirmed up message
@@ -146,8 +152,12 @@ The length of bytes allowed to be transmitted is different at different rates (s
 Hexadecimal (2 characters for 1 number)
 
 AT+DTRX=1,2,5,0123456789
+
 OK+SEND:05
+
 OK+SENT:01
+
 OK+RECV:02,01,00
+
 Confirm data sent successfully, valid data received by server should be 0x01 0x23 0x45 0x67 0x89.
 And received downlink confirmation 0x02,0x01,0x00.
