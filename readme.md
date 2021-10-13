@@ -65,7 +65,7 @@ The module supports 868MHz and 915MHz Lorawan communication, but requires upload
 
 Please refer to the document for detailed burning method.
 
-- Maduino Zero Lorawan Change Frequence.docx
+Detail is in ".\firmware\Maduino Zero Lorawan Change Frequence.docx"
 
 
 ## Equipment list
