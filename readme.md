@@ -7,6 +7,7 @@ Version:		V1.1
 Author:			Vincent
 Create Date:	2021/5/19
 Note:
+		V1.2:Add Maduino Zero Lorawan Change Frequence.docx
 		V1.1:Add At command explain.
 */
 ```
@@ -55,6 +56,16 @@ Wiki Link :  [Maduino Zero LoRaWAN Node](https://www.makerfabs.com/wiki/index.ph
 
 
 # Example
+
+## V1.2 Change Frequence
+
+The module supports 868MHz and 915MHz Lorawan communication, but requires upload different firmware.
+
+You must need a J-Link V9.
+
+Please refer to the document for detailed burning method.
+
+
 
 
 ## Equipment list
