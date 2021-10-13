@@ -61,11 +61,11 @@ Wiki Link :  [Maduino Zero LoRaWAN Node](https://www.makerfabs.com/wiki/index.ph
 
 The module supports 868MHz and 915MHz Lorawan communication, but requires upload different firmware.
 
-You must need a J-Link V9.
+**You must need a J-Link V9.**
 
 Please refer to the document for detailed burning method.
 
-
+- Maduino Zero Lorawan Change Frequence.docx
 
 
 ## Equipment list
