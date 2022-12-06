@@ -49,6 +49,7 @@ void setup()
     sendData("AT+CJOIN=1,0,10,1", 30000, DEBUG);
 
     //set one message to webgate
+    //AT+DTRX=1,2,10,4D414B455246414253
     //sendData("AT+DTRX=1,2,5,FF 00 88", 3000, DEBUG);
 }
 
