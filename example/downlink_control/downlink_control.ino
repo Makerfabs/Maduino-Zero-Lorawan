@@ -44,11 +44,14 @@ void setup()
 long int runtime = 20000;
 void loop()
 {
-    if ((millis() - runtime) > 30000)
+    if ((millis() - runtime) > 10000)
     {
 
         String downlink = "";
-        downlink = lorawan_tx_rx("FF1234", 30000);
+        if (led_flag == 1)
+            downlink = lorawan_tx_rx("F8", 20000);
+        if (led_flag == 0)
+            downlink = lorawan_tx_rx("F7", 20000);
 
         if (downlink.endsWith("F8"))
             led_flag = 1;
@@ -58,7 +61,7 @@ void loop()
         display.clearDisplay();
         display.setCursor(0, 4);
         display.println(downlink);
-        if (led_flag != 0)
+        if (led_flag == 1)
         {
             display.setCursor(0, 20);
             display.println("LED ON");
@@ -159,16 +162,28 @@ String lorawan_tx_rx(String msg_hex, const int timeout)
             else if (c == '\n')
             {
                 SerialUSB.println(response);
+                
                 if (response.indexOf(rec_head) != -1)
                 {
-                    SerialUSB.println("-----------Get downlink msg:");
+                    SerialUSB.println("-----------Get downlink msg-----------");
 
                     String result = response.substring(response.indexOf(rec_head) + rec_head.length());
 
                     SerialUSB.println(result);
-                    SerialUSB.println("Over-----------");
+                    SerialUSB.println("-----------Over-----------");
                     return result;
                 }
+                else if (response.indexOf("ERR+SENT") != -1)
+                {
+                    SerialUSB.println("-----------Get downlink msg-----------");
+
+                    String result = "SEND FAILED";
+
+                    SerialUSB.println(result);
+                    SerialUSB.println("-----------Over-----------");
+                    return result;
+                }
+
                 response = "";
             }
             else
