@@ -3,10 +3,11 @@
 
 ```c++
 /*
-Version:		V1.1
+Version:		V1.3
 Author:			Vincent
 Create Date:	2021/5/19
 Note:
+		V1.3:Change Wiki Link
 		V1.2:Add Maduino Zero Lorawan Change Frequence.docx
 		V1.1:Add At command explain.
 */
@@ -22,16 +23,16 @@ Note:
 
 [Makerfabs home page](https://www.makerfabs.com/)
 
-[Makerfabs Wiki](https://www.makerfabs.com/wiki/index.php?title=Main_Page)
+[Makerfabs Wiki](https://wiki.makerfabs.com/)
 
 # Maduino Zero Lorawan
 ## Intruduce
 
-Product Link ：[maduino-zero-lorawan](https://www.makerfabs.com/maduino-zero-lorawan.html) 
+Product Link ：[Maduino Zero LoRaWAN](https://www.makerfabs.com/maduino-zero-lorawan.html) 
 
-Wiki Link :  [Maduino Zero LoRaWAN Node](https://www.makerfabs.com/wiki/index.php?title=Maduino_Zero_LoRaWAN_Node) 
+Wiki Link :  [Maduino Zero LoRaWAN Node](http://wiki.makerfabs.com/Maduino_Zero_LoRaWAN_Node.html) 
 
-
+Maduino Zero LoRaWan is a solution based on ATSAMD21G18 MCU and LoRaWAN module Ra-07H. The LoRaWAN module Ra-07H is based on the ASR6501 chip, it integrated the LoRa radio transceiver, LoRa modem, and 32-bit RISC MCU, to support LoRa modulation mode and (G) FSK modulation mode. Maduino LoRaWan acts as a LoRaWAN node to transmit/receive the local data to the network by connecting LoRaWAN Gateway. With this module, users are easy to prototype LoRaWAN projects easily in few hours.
 
 ## Feature
 
