@@ -7,6 +7,7 @@ Version:		V1.3
 Author:			Vincent
 Create Date:	2021/5/19
 Note:
+		V1.4:Create Ra07 Branch
 		V1.3:Change Wiki Link
 		V1.2:Add Maduino Zero Lorawan Change Frequence.docx
 		V1.1:Add At command explain.
@@ -18,6 +19,10 @@ Note:
 
 
 [toc]
+
+*Since Ra07 has been discontinued, this product has been upgraded to Ra08 module, the two modules are not completely common.*
+
+*This Branch is used for backups and will not be updated.*
 
 # Makerfabs
 
