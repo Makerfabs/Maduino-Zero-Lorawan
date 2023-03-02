@@ -5,9 +5,9 @@
 #define DEBUG true
 
 //get appeui and appkey from the thing network
-#define DEVEUI "D896E0FF00000241"
-#define APPEUI "70B3D57ED0041DA0"
-#define APPKEY "DAC6118A3445572B02EFB73443AF2EB9"
+#define DEVEUI "UES YOUR DEVEUI"
+#define APPEUI "UES YOUR APPEUI"
+#define APPKEY "UES YOUR APPKEY"
 
 #define DHTPIN 7      // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT11 // DHT 11

@@ -7,9 +7,9 @@
 #define DEBUG true
 
 // get appeui and appkey from the thing network
-#define DEVEUI "70B3D57ED0057468"
-#define APPEUI "0000000000000000"
-#define APPKEY "A614344378DC15A24BFA3B43E6C4C320"
+#define DEVEUI "UES YOUR DEVEUI"
+#define APPEUI "UES YOUR APPEUI"
+#define APPKEY "UES YOUR APPKEY"
 
 #define PWR_KEY 9
 #define RST_KEY 6

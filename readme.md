@@ -7,6 +7,7 @@ Version:		V1.3
 Author:			Vincent
 Create Date:	2021/5/19
 Note:
+		V2.0:Change for Ra08
 		V1.3:Change Wiki Link
 		V1.2:Add Maduino Zero Lorawan Change Frequence.docx
 		V1.1:Add At command explain.
@@ -32,7 +33,7 @@ Product Link ：[Maduino Zero LoRaWAN](https://www.makerfabs.com/maduino-zero-lo
 
 Wiki Link :  [Maduino Zero LoRaWAN Node](http://wiki.makerfabs.com/Maduino_Zero_LoRaWAN_Node.html) 
 
-Maduino Zero LoRaWan is a solution based on ATSAMD21G18 MCU and LoRaWAN module Ra-07H. The LoRaWAN module Ra-07H is based on the ASR6501 chip, it integrated the LoRa radio transceiver, LoRa modem, and 32-bit RISC MCU, to support LoRa modulation mode and (G) FSK modulation mode. Maduino LoRaWan acts as a LoRaWAN node to transmit/receive the local data to the network by connecting LoRaWAN Gateway. With this module, users are easy to prototype LoRaWAN projects easily in few hours.
+Maduino Zero LoRaWan is a solution based on ATSAMD21G18 MCU and LoRaWAN module Ra-08H. The LoRaWAN module Ra-08H is based on the ASR6501 chip, it integrated the LoRa radio transceiver, LoRa modem, and 32-bit RISC MCU, to support LoRa modulation mode and (G) FSK modulation mode. Maduino LoRaWan acts as a LoRaWAN node to transmit/receive the local data to the network by connecting LoRaWAN Gateway. With this module, users are easy to prototype LoRaWAN projects easily in few hours.
 
 ## Feature
 
@@ -58,20 +59,46 @@ Maduino Zero LoRaWan is a solution based on ATSAMD21G18 MCU and LoRaWAN module R
 
 # Example
 
-## V1.2 Change Frequence
+## V2.0 Change Frequence
 
 The module supports 868MHz and 915MHz Lorawan communication, but requires upload different firmware.
 
-**You must need a J-Link V9.**
+**You must need  Makerfabs Down tools or USB to TTL tools**
 
-Please refer to the document for detailed burning method.
+[MakerFabs CP2104 USB2UART](https://www.makerfabs.com/cp2104-usb-to-serial-converter.html)
 
-Detail is in ".\firmware\Maduino Zero Lorawan Change Frequence.docx"
+![cp2104](md_pic/cp2104.png)
 
 
-## Equipment list
 
-- Maduino Zero Lorawan
+1, Open firmware_update_tool/ TremoProgrammer_v0.8.exe
+
+2, Select firmware you need.
+
+![firmware](md_pic/firmware.jpg)
+
+
+
+3, Connect MakerFabs CP2104 USB2UART to Maduino Zero Lorawan.
+
+| USB2UART | Maduino Zero Lorawan |
+| -------- | -------------------- |
+| VCC      | 3.3V                 |
+| GND      | GND                  |
+| TX       | CLK                  |
+| RX       | DIO                  |
+
+![ra08](md_pic/ra08.jpg)
+
+4, Connect J10 and 3V3 with a wire
+
+5, Click Download
+
+6, Press RESET button on Maduino
+
+7, Wait download over
+
+
 
 
 ## Compiler Options
@@ -91,6 +118,16 @@ Simple at command test demo
 
 Register the Lorawan gateway in OTA mode and send data to the TTN. And send message to ThingSpeak.
 ![thingspeak](md_pic/thingspeak.jpg)
+
+### test_SD
+
+Simple SD card test for read and write.
+
+### downlink_control
+
+Using TTN console send a download message to Maduino. 
+
+
 
 ## AT Command Explain
 
@@ -121,6 +158,20 @@ AT+CJOINMODE=&lt;MODE&gt;
 Defualt mode is OTAA.
 
 AT+CJOINMODE=0
+
+### AT+CCLASS=&lt;MODE&gt;
+
+*Set lorwan mode.*
+
+AT+CJOINMODE=&lt;MODE&gt;
+&lt;MODE&gt;
+0：ClassA
+1：ClassB
+2：ClassC
+
+Defualt mode is ClassA.
+
+AT+CCLASS=0
 
 
 ### AT+CJOIN=&lt;ParaValue1&gt;,[ParaValue2],…[ParaValue4]
