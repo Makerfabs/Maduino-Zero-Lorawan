@@ -24,8 +24,8 @@ long int runtime = 20000;
 void setup()
 {
 
-    Serial1.begin(115200);
-    SerialUSB.begin(115200);
+    Serial1.begin(9600);
+    SerialUSB.begin(9600);
 
     dht.begin();
 
@@ -44,6 +44,9 @@ void setup()
 
     //set join mod "OTAA"
     sendData("AT+CJOINMODE=0", 3000, DEBUG);
+
+    //join lorawan
+    sendData("AT+CCLASS=0", 30000, DEBUG);
 
     //join lorawan
     sendData("AT+CJOIN=1,0,10,1", 30000, DEBUG);

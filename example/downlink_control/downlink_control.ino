@@ -24,8 +24,8 @@ int led_flag = 0;
 
 void setup()
 {
-    Serial1.begin(115200);
-    SerialUSB.begin(115200);
+    Serial1.begin(9600);
+    SerialUSB.begin(9600);
     Wire.begin();
     oled_init();
 
@@ -38,7 +38,8 @@ void setup()
     sendData("AT+CAPPEUI=" + String(APPEUI), 3000, DEBUG);
     sendData("AT+CAPPKEY=" + String(APPKEY), 3000, DEBUG);
     sendData("AT+CJOINMODE=0", 3000, DEBUG);
-    sendData("AT+CJOIN=1,0,10,1", 30000, DEBUG);
+    sendData("AT+CCLASS=0", 30000, DEBUG);
+    sendData("AT+CJOIN=1,0,8,8", 30000, DEBUG);
 }
 
 long int runtime = 20000;
