@@ -1,24 +1,14 @@
-#include <stdio.h>
-#include <string.h>
+// Serial port transmission
 
-#define DEBUG true
-
-//get appeui and appkey from the thing network
-#define DEVEUI "D896E0FF00000241"
-#define APPEUI "70B3D57ED0041DA0"
-#define APPKEY "850D282C603C163137BB71E9521D12D0"
-
-int PWR_KEY = 9;
-int RST_KEY = 6;
-int LOW_PWR_KEY = 5;
-
-bool ModuleState = false;
+#define PWR_KEY 9
+#define RST_KEY 6
+#define LOW_PWR_KEY 5
 
 void setup()
 {
 
-    Serial1.begin(115200);
-    SerialUSB.begin(115200);
+    Serial1.begin(9600);
+    SerialUSB.begin(9600);
 
     SerialUSB.println("Now turnning the AT module on.Please wait.");
 
@@ -53,25 +43,5 @@ void pin_init()
     digitalWrite(PWR_KEY, LOW);
     delay(3000);
     digitalWrite(PWR_KEY, HIGH);
-    delay(10000);
-}
-
-String sendData(String command, const int timeout, boolean debug)
-{
-    String response = "";
-    Serial1.println(command);
-    long int time = millis();
-    while ((time + timeout) > millis())
-    {
-        while (Serial1.available())
-        {
-            char c = Serial1.read();
-            response += c;
-        }
-    }
-    if (debug)
-    {
-        SerialUSB.print(response);
-    }
-    return response;
+    delay(5000);
 }
